@@ -1,11 +1,10 @@
 from app import app
-from flask import render_template
+from flask import render_template, redirect
 
 @app.route('/')
 def main():
-    return "Hello!"
+    return redirect('/welcome')
 
-@app.route('/home')
-def home():
-    return render_template('home.html')
-
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')
